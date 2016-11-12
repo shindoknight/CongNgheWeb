@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,7 +161,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entities\CTDatVe.cs" />
+    <Compile Include="Entities\DatVe.cs" />
+    <Compile Include="Entities\DongVat.cs" />
+    <Compile Include="Entities\KhachHang.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\SuKien.cs" />
+    <Compile Include="Entities\Ve.cs" />
+    <Compile Include="Entities\Zoo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +221,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Text\noidung1.txt" />
+    <Content Include="Text\noidung2.txt" />
+    <Content Include="Text\tomtat1.txt" />
+    <Content Include="Text\tomtat2.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -234,6 +249,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

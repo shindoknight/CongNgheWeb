@@ -12,6 +12,13 @@ body {
 	margin:0 auto;
     background-position: center 40px;
 }
+#menubar{
+    background: url(images/head.jpg) repeat-x center 0;
+    height:35px;
+	width:auto;
+    color:#c0ab8a;
+    
+}
 p a, h4 a {
 	color: #875316;
 }
@@ -86,7 +93,7 @@ p a, h4 a {
 	right: 55px;
 	top: 100px;
 }
-#header a {
+#headerlink {
 	margin:11px 0 35px 20px;
 	padding:0;
 	border:0;

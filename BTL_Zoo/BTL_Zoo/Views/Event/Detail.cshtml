@@ -1,0 +1,33 @@
+﻿@model BTL_Zoo.Entities.SuKien
+@{
+    ViewBag.Title = "Detail";
+}
+<div id="content">
+    <div id="events">
+        <h1>@Model.TieuDe</h1>
+        <p><h5>@Model.Thoigian</h5></p>
+        <p><img id="imageevent" src="~/Content/images/@Model.HinhAnh"   /></p>
+         @{
+            var s = new StreamReader(Model.TomTat.ToString());
+            string line;
+            while ((line = s.ReadLine()) != null)
+                {
+                    <p><h3>@line</h3></p>
+                }
+            }
+        @{
+            var s2 = new StreamReader(Model.NoiDung.ToString());
+            string line2;
+            while ((line2 = s.ReadLine()) != null)
+            {
+                <p><h3>@line2</h3></p>
+            }
+        }
+              
+    
+
+    </div>
+</div>
+
+
+

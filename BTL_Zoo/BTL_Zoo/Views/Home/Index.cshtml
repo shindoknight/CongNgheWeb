@@ -1,11 +1,111 @@
-﻿
+﻿@model BTL_Zoo.Entities.ListZoo
 @{
-   
+    var animal = Model;
+}
+@{
+
     ViewBag.Title = "Index";
 }
-<link rel="stylesheet" href="~/Content/style.css" type="text/css" />
-<a href="#">Buy tickets</a><a href ="#">Check Events</a>
-<img src="~/Content/images/lion-family.jpg" alt="" />
+
+    <table align="center">
+        <tr>
+            <td>
+                <a id="headerlink" href="#">Đặt vé</a>
+                <a id="headerlink" href="#">Sự Kiện</a>
+            </td>
+            <td>
+                <img src="~/Content/images/lion-family.jpg" align="middle" />
+            </td>
+        </tr>
+    </table>
+    <div id="header">
+        <div>
+            <h1>Sự kiện đặt biệt: </h1>
+            <p>Buổi trình diễn trang phục áo tắm của hiện tượng Tùng Sơn.</p>
+        </div>
+    </div>
+<div id="content">
+    <div id="featured">
+        <h2>Ghé thăm những loài động vật hoang dã</h2>
+        <ul>
+            @{
+                var a = 0;
+            }
+            @foreach (var item in Model.LsDongVat)
+            {
+                
+                
+                <li> <a href="#"><img src="~/Content/images/@item.HinhAnh" alt="" width=98 height=98 /></a> <a href="#">@item.TenDV</a> </li>
+                a++;
+                if (a == 8) { break; }
+            }
+        </ul>
+    </div>
+    <div class="section1">
+        <h2>Phản hồi</h2>
+        <ul id="article">
+            <li class="first">
+                <a href="#"><span>Jul 17</span></a>
+                <p>Vườn thú tuyệt vời, rất thích hợp cho những buổi vui chơi của gia đình vào cuối tuần. Tôi đã có 1 ngày nghỉ tuyệt vời cùng gia đình tôi ở đây!</p>
+            </li>
+            <li>
+                <a href="#"><span>Aug 23</span></a>
+                <p>Tôi nghĩ Vườn thú nên bổ sung những con vật lạ hơn nữa. Những động vật ở đây đã có từ rất lâu rồi</p>
+            </li>
+            <li>
+                <a href="#"><span>Oct 01</span></a>
+                <p>Nhà vệ sinh thật tồi tàn, vườn thú nên nâng cấp nhà vệ sinh!</p>
+            </li>
+        </ul>
+    </div>
+    <div class="section2">
+        <h2>Sự kiện</h2>
+        @{
+            var count = 0;
+        }
+        @foreach (var eve in Model.LsSuKien)
+        {
+            count++;
+            if (count == 1)
+            {
+                <p>@eve.TieuDe</p>
+                <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=200 height=150/></a>
+               
+                        {
+                        var s = new StreamReader(eve.TomTat.ToString());
+                        string line;
+                        while ((line = s.ReadLine()) != null)
+                          {
+                            <p><h4>@line</h4></p>
+                           }
+                        }
+                       
+            }
+            else
+            {
+                if(count<4)
+                {
+                    <div id="section1">
+                    <ul>
+                        <li class="tit"> <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=130 height=80 /></a>
+                         <h4><a href="~/Event/Detail/@eve.IDEvent">@eve.TieuDe</a></h4>
+                        @{
+                             var s = new StreamReader(eve.TomTat.ToString());
+                                string line;
+                            while ((line = s.ReadLine()) != null)
+                            {
+                                <p><h4>@line</h4></p>
+                            }
+                        }
+                        </li>
+                    </ul>
+                    </div>
+                }
+            }
+        }
+    </div>
 
 
+
+</div>
 

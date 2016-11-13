@@ -10,7 +10,7 @@ body {
 	height:auto;
 	width:auto;
 	margin:0 auto;
-    background-position: center 40px;
+    background-position: center 90px;
 }
 #menubar{
     background: url(images/head.jpg) repeat-x center 0;
@@ -213,7 +213,7 @@ p a, h4 a {
 	font-size: 30px;
 	line-height: 70px;
 	margin: 0;
-	padding-left: 15px;
+	padding-left: 10px;
 	float: left;
 	height: 66px;
 }
@@ -275,7 +275,8 @@ p a, h4 a {
 #content #featured ul li {
 	float:left;
 	text-align: center;
-	margin-left: 15px;
+	margin-left: 10px;
+   
 	border: 0;
 }
 #content #featured ul li.last a img {
@@ -463,6 +464,15 @@ p a, h4 a {
 	width: 375px;
 	line-height: 17px;
 }
+#content div.section2 h4{
+	color: #875115;
+	font-family: arial;
+	font-size: 14px !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left;
+}
 #content div img {
 	float: left;
 	margin-right: 10px;
@@ -526,6 +536,10 @@ p a, h4 a {
 	width: 140px;
 	font-size: 14px;
 }
+#content div div#section2 p {
+	width: 140px;
+	font-size: 14px;
+}
 #content div div ul {
 	list-style:none;
 	margin: 0;
@@ -536,6 +550,15 @@ p a, h4 a {
 	margin-bottom: 20px;
 }
 #content div div ul li h4 {
+	float: left;
+	margin: 0;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	width: 155px;
+	text-align: left;
+}
+#content div div ul li h4.tit {
 	float: left;
 	margin: 0;
 	font-family: arial;
@@ -562,6 +585,13 @@ p a, h4 a {
 	font-weight: bold;
 	display: block;
 	margin: 10px 0 0 0;
+}
+#imageevent
+{
+    width:630px;
+    height:500px;
+    
+
 }
 a#email {
 	background: url(images/icons.gif) no-repeat;

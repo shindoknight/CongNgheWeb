@@ -167,6 +167,7 @@
     <Compile Include="Entities\DatVe.cs" />
     <Compile Include="Entities\DongVat.cs" />
     <Compile Include="Entities\KhachHang.cs" />
+    <Compile Include="Entities\ListZoo.cs" />
     <Compile Include="Entities\Login.cs" />
     <Compile Include="Entities\SuKien.cs" />
     <Compile Include="Entities\Ve.cs" />

@@ -11,11 +11,11 @@
             @foreach (var item in Model)
             {
                 
-               // var tt = Html.DisplayFor(modelItem => item.TieuDe).ToString();
+                //var tt = @item.TieuDe
                     
                 <li>
-                    <div><a href="#"><img src="@item.HinhAnh" /></a></div>
-                    <h4>@Html.ActionLink( Html.DisplayFor(modelItem => item.TieuDe).ToString(), "Detail", new { id = item.IDEvent })</h4>
+                    <div><a href="/Detail/@item.IDEvent"><img src="~/Content/images/@item.HinhAnh" /></a></div>
+                    <h4>@Html.ActionLink( item.TieuDe, "Detail", new { id = item.IDEvent })</h4>
                      <p> @Html.DisplayFor(modelItem => item.Thoigian)</p>
                     @{
                          var s = new StreamReader(item.TomTat.ToString());

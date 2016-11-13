@@ -1,0 +1,15 @@
+﻿@model IEnumerable<BTL_Zoo.Entities.DongVat>
+
+@{
+    ViewBag.Title = "Animal";
+}
+<div id="featured">
+    <h2>Ghé thăm những loài động vật hoang dã</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li class="first"> <a href="#"><img src="~/Content/images/@item.HinhAnh" alt="" /></a> <a href="#">@item.TenDV</a> </li>
+
+        }
+    </ul>
+</div>

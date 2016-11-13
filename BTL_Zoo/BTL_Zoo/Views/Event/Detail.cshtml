@@ -6,7 +6,7 @@
     <div id="events">
         <h1>@Model.TieuDe</h1>
         <p><h5>@Model.Thoigian</h5></p>
-        <p><img src="@Model.HinhAnh" /></p>
+        <p><img id="imageevent" src="~/Content/images/@Model.HinhAnh"   /></p>
          @{
             var s = new StreamReader(Model.TomTat.ToString());
             string line;

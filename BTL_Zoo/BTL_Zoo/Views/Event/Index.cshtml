@@ -14,7 +14,7 @@
                 //var tt = @item.TieuDe
                     
                 <li>
-                    <div><a href="/Detail/@item.IDEvent"><img src="~/Content/images/@item.HinhAnh" /></a></div>
+                    <div><a href="~/Event/Detail/@item.IDEvent"><img src="~/Content/images/@item.HinhAnh" /></a></div>
                     <h4>@Html.ActionLink( item.TieuDe, "Detail", new { id = item.IDEvent })</h4>
                      <p> @Html.DisplayFor(modelItem => item.Thoigian)</p>
                     @{

@@ -9,6 +9,7 @@ namespace BTL_Zoo.Entities
     {
         public List<DongVat> LsDongVat { get; set; }
         public List<SuKien> LsSuKien { get; set; }
+        public List<PhanHoi> LsPhanHoi { get; set; }
         
     }
 }

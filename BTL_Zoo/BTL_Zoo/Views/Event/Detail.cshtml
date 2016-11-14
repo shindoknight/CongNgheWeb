@@ -12,13 +12,13 @@
             string line;
             while ((line = s.ReadLine()) != null)
                 {
-                    <p><h3>@line</h3></p>
+                    <p><h4>@line</h4></p>
                 }
             }
         @{
             var s2 = new StreamReader(Model.NoiDung.ToString());
             string line2;
-            while ((line2 = s.ReadLine()) != null)
+            while ((line2 = s2.ReadLine()) != null)
             {
                 <p><h3>@line2</h3></p>
             }

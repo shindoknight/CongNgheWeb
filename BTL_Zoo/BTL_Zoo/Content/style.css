@@ -7,7 +7,7 @@ body {
 }
 #page {
 	background:url(images/bg-page.gif) no-repeat center 0;
-	height:auto;
+	height:1500px;
 	width:auto;
 	margin:0 auto;
     background-position: center 90px;
@@ -237,11 +237,16 @@ p a, h4 a {
 	background: none;
 }
 /*-------------------------	Content --------------------------*/
+#bg
+{
+    width: 960px;
+    height: 750px;
+}
 #content {
 	width: 960px;
 	margin: 0 auto;
 	overflow: hidden;
-	height: auto;
+	height: 750px;
 	padding-bottom: 30px;
 }
 #content div#featured {
@@ -455,6 +460,12 @@ p a, h4 a {
 	font-weight: bold;
 	font-style: normal;
 }
+#content div ul#article li p span {
+	color: #b00923;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+}
 #content div.section2 p {
 	color: #875115;
 	font-family: arial;
@@ -558,7 +569,16 @@ p a, h4 a {
 	width: 155px;
 	text-align: left;
 }
-#content div div ul li h4.tit {
+#content div div ul li h3 {
+   float: left;
+	margin: 0;
+	font-family: arial;
+	font-size: 14px;
+	font-weight: normal;
+	width: 155px;
+	text-align: left;
+}
+#content div div ul li h4 a {
 	float: left;
 	margin: 0;
 	font-family: arial;
@@ -566,10 +586,9 @@ p a, h4 a {
 	font-weight: bold;
 	width: 155px;
 	text-align: left;
+    text-decoration: none;
 }
-#content div div ul li h4 a {
-	text-decoration: none;
-}
+
 #content div.section3 {
 	float: left;
 	margin: 20px 0 0;
@@ -637,7 +656,7 @@ a#twitter {
 	float: none;
 	left: 15px;
 	_left: 11px;
-	margin: 0;
+	margin: 98px 0 0 0  ;
 	position: absolute;
 	top: 239px;
  *top: 241px;
@@ -974,6 +993,7 @@ a#twitter {
 	background: url(images/bg-footer.gif) repeat-x center top;
 	padding: 7px 0 0;
 	overflow: hidden;
+    
     
 }
 #footer div {

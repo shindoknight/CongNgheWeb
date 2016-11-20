@@ -13,13 +13,14 @@ namespace BTL_Zoo.Controllers
         Entities.Zoo mo = new Entities.Zoo();
         public ActionResult Index()
         {
-           
+
             return View(mo.SuKiens.ToList());
         }
         public ActionResult Detail(int id)
         {
             SuKien eve = mo.SuKiens.Find(id);
             return View(eve);
+            //         }
         }
-	}
+    }
 }

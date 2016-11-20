@@ -8,7 +8,7 @@ namespace BTL_Zoo.Entities
     public partial class Zoo : DbContext
     {
         public Zoo()
-            : base("name=Zoo")
+            : base("name=Zoo2")
         {
         }
 

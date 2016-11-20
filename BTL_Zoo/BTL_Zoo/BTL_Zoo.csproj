@@ -161,8 +161,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DongVatController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoiQuyController.cs" />
     <Compile Include="Entities\CTDatVe.cs" />
     <Compile Include="Entities\DatVe.cs" />
     <Compile Include="Entities\DongVat.cs" />
@@ -175,10 +177,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelTimKiem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css.css" />
     <Content Include="Content\images\animal-kingdom.jpg" />
     <Content Include="Content\images\bg-body.gif" />
     <Content Include="Content\images\bg-footer.gif" />
@@ -222,6 +226,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\js.js" />
     <Content Include="Text\noidung1.txt" />
     <Content Include="Text\noidung2.txt" />
     <Content Include="Text\tomtat1.txt" />
@@ -239,8 +244,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -252,6 +255,9 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
+    <Content Include="Views\DongVat\Index.cshtml" />
+    <Content Include="Views\NoiQuy\Index.cshtml" />
+    <Content Include="Views\DongVat\partial.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

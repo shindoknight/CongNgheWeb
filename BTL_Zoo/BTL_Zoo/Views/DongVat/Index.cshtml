@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BTL_Zoo.Entities.DongVat>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
+<script type="text/javascript" src="~/Scripts/js.js">
+</script>
+<link type="text/css" rel="stylesheet" href="~/Content/css.css">
+
+<div id="content">
+    <div id="gallery">
+        <ul style="width: 800px;">
+            @foreach (var item in Model)
+            {
+                   
+                <li>
+                    <table>
+                        <tr>
+                            <a><img src="~/Content/Images/@item.HinhAnh" alt=""></a>
+                       </tr>
+                       <tr>
+                            <p> @item.TenDV: </p>
+                       </tr>
+                       <tr>
+                            <p>@item.TenKH</p>
+                       </tr>
+
+                        <!--
+                       <tr>
+                            <div class="more">
+                            </div>
+                        </tr>
+                        -->
+                    </table>
+                      
+                </li>
+
+            }
+        </ul>
+    </div>
+</div>
+@Html.Partial("partial")

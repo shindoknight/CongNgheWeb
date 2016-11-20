@@ -644,9 +644,14 @@ a#twitter {
 	_top: 231px;
 }
 /*-------------------------	Content Pages --------------------------*/
+.more {
+            width: 212px;
+            background-color: #f0f0f0;
+            margin: 0px;
+        }
+
 #content div {
-	padding: 0 10px 0 35px;
-	float: left;
+	
 }
 #content div h1 {
 	font-family: arial;
@@ -818,11 +823,69 @@ a#twitter {
 	width: 585px;
 	text-decoration: none;
 }
+/*-------------------------	KHUNG --------------------------*/
+#Khung {
+	width: 800px;
+	margin: 0 auto;
+	float: none;
+	height: auto;
+	padding-left: 45px;
+}
+
+#ThanhPhan{
+	float: none;
+	list-style: none;
+	margin: 0;
+	
+	width: 800;
+	overflow: hidden;
+}
+#ThanhPhan li{
+	float: left;
+	margin: 0 32px 45px 0;
+}
+#ThanhPhan li div{
+	float: none;
+	height: 213px;
+	padding: 1px;
+	width: 214px;
+	background: #DBC6A9;
+	margin: 0 0 5px;
+}
+#ThanhPhan li div a{
+	display: block;
+	font-size: 15px;
+	color: #721f1f;
+	text-decoration: none;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+}
+#ThanhPhan li div p{
+	display: block;
+	font-size: 15px;
+	color: #721f1f;
+	text-decoration: none;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+}
+#ThanhPhan li div a img{
+	margin: 0;
+	float: none;
+}
+#ThanhPhan li div a img:hover{
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+
+
+
 #content div#gallery {
 	width: 745px;
 	margin: 0 auto;
 	float: none;
-	height: 911px;
+	height: auto;
 	padding-left: 45px;
 }
 #content div#gallery ul {
@@ -836,14 +899,20 @@ a#twitter {
 	float: left;
 	margin: 0 32px 41px 0;
 }
-#content div#gallery ul li div {
-	float: none;
-	height: 213px;
-	padding: 1px;
-	width: 214px;
-	background: #DBC6A9;
-	margin: 0 0 5px;
+#gallery2{
+    width:900px;
 }
+.Ul_Nho{
+    width:800px;
+
+}
+.li_nho{
+    width:213px;
+    height:215px;
+}
+
+
+
 #content div#gallery ul li div a img {
 	margin: 0;
 	float: none;

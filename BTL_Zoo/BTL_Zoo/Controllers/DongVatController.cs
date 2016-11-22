@@ -16,22 +16,32 @@ namespace BTL_Zoo.Controllers
         {
             return View(db.DongVats.ToList());
         }
-        public ActionResult TimKiemNhanh(string txtTenDv)
+        public ActionResult TimKiemNhanh(string txtdongVat)
         {
-            List<DongVat> tblDongvat = db.DongVats.Where(x=>x.TenDV.Contains(txtTenDv)).ToList();
-            return View("Index",tblDongvat);
+            List<DongVat> tblDongvat = db.DongVats.Where(x => x.TenDV.Contains(txtdongVat)).ToList();
+            //List<DongVat> tblDongvat = db.DongVats.SqlQuery("Select * from DongVat where TenDV ={0}", txtdongVat).ToList();
+            return View("Index", tblDongvat);
+        }
+
+
+        [HttpPost]
+        public ActionResult TimKiemDongVat(string TenDv, string TenKH, string ThucAn, string NguonGoc, string ChieuCao)
+        {
+            List<DongVat> tblDongVat = db.DongVats.Where(x => x.TenDV.Contains(TenDv) && x.TenKH.Contains(TenKH) && x.ThucAn.Contains(ThucAn) && x.NguonGoc.Contains(NguonGoc) && x.ChieuCao.Contains(ChieuCao)).ToList();
+            //List<DongVat> tblDongVat = db.DongVats.SqlQuery("");
+
+            return View("Index", tblDongVat);
         }
         
-
-
-        public ActionResult TimKiem(FormCollection f)
+        public ActionResult ThongTinChiTiet(int maDv)
         {
-
-            string txtTimkiem = f["txtTimKiem"].ToString();
-//             int madv = int.Parse(txtTimkiem);
-//             List<DongVat> lstDongVat = db.DongVats.SqlQuery("Select * from DongVat where MaDV= '{0}", madv).ToList<DongVat>();
-            List<DongVat> lstDongVat = db.DongVats.Where(n=>n.TenDV.Contains(txtTimkiem)).ToList();
-            return View("Index",lstDongVat);
+            List<DongVat> record = db.DongVats.Where(x => x.MaDV == maDv).ToList();
+            if (record == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(record.ToList());
         }
-	}
+    }
 }

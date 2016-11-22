@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css.css" />
+    <Content Include="Content\DongVat.css" />
     <Content Include="Content\images\animal-kingdom.jpg" />
     <Content Include="Content\images\bg-body.gif" />
     <Content Include="Content\images\bg-footer.gif" />
@@ -255,9 +256,12 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
-    <Content Include="Views\DongVat\Index.cshtml" />
     <Content Include="Views\NoiQuy\Index.cshtml" />
     <Content Include="Views\DongVat\partial.cshtml" />
+    <Content Include="Views\Shared\DongVat.cshtml" />
+    <Content Include="Views\DongVat\Index.cshtml" />
+    <Content Include="Views\Shared\ChiTietDongVat.cshtml" />
+    <Content Include="Views\DongVat\ThongTinChiTiet.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

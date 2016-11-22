@@ -108,7 +108,6 @@ D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\Micros
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.csprojResolveAssemblyReference.cache
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.dll
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.pdb
-C:\Users\Tuanbita\Documents\GitHub\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.csprojResolveAssemblyReference.cache
 C:\Users\Tuanbita\Documents\GitHub\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.dll
 C:\Users\Tuanbita\Documents\GitHub\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\BTL_Zoo.dll.config
 C:\Users\Tuanbita\Documents\GitHub\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\BTL_Zoo.dll
@@ -218,3 +217,4 @@ C:\Users\Tuanbita\Desktop\wweb\Detai\BTL_Zoo\BTL_Zoo\bin\Microsoft.Owin.Security
 C:\Users\Tuanbita\Desktop\wweb\Detai\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.csprojResolveAssemblyReference.cache
 C:\Users\Tuanbita\Desktop\wweb\Detai\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.dll
 C:\Users\Tuanbita\Desktop\wweb\Detai\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.pdb
+C:\Users\Tuanbita\Documents\GitHub\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.csprojResolveAssemblyReference.cache

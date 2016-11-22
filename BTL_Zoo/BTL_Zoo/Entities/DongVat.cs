@@ -26,8 +26,18 @@ namespace BTL_Zoo.Entities
 
         [StringLength(100)]
         public string HinhAnh { get; set; }
+        public string GioiThieu { set; get; }
 
         [StringLength(100)]
-        public string ChiTiet { get; set; }
+        public string ThucAn { get; set; }
+        
+        public string NguonGoc { set; get; }
+        public string ChieuCao { set; get; }
+        public string CanNang { set; get; }
+        public string NoiSinhSong { set; get; }
+        public int? MaVe { set; get; }
+
+
+
     }
 }

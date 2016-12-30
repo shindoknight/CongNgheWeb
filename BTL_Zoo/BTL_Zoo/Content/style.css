@@ -609,7 +609,7 @@ p a, h4 a {
 {
     width:630px;
     height:500px;
-    
+    margin: 0 100px 0 100px;
 
 }
 a#email {

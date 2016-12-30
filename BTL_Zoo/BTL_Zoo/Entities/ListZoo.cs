@@ -7,9 +7,10 @@ namespace BTL_Zoo.Entities
 {
     public class ListZoo
     {
-        public List<DongVat> LsDongVat { get; set; }
-        public List<SuKien> LsSuKien { get; set; }
-        public List<PhanHoi> LsPhanHoi { get; set; }
-        
+        public List<DongVat> LsDongVat { set; get; }
+        public List<SuKien> LsSuKien { set; get; }
+        public List<Ve> LsVe { set; get; }
+        public List<Login> LsAccount { get; set; }
+        public List<PhanHoi2> LsPhanHoi { set; get; }
     }
 }

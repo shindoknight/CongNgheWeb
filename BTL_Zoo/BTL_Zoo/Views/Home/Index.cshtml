@@ -52,7 +52,7 @@
 
 
                <li>
-                <p style="font-weight:bold"><span>@item.Ten</span></p>
+                <p style="font-weight:bold"><span>@item.HoTen</span></p>
                    <p style="font-style:italic">@item.ThoiGian</p>
                 <p>@item.NoiDung</p>
                 </li>
@@ -74,15 +74,7 @@
             {
                 <p>@eve.TieuDe</p>
                 <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=200 height=150 /></a>
-
-                {
-                    var s = new StreamReader(eve.TomTat.ToString());
-                    string line;
-                    while ((line = s.ReadLine()) != null)
-                    {
-                        <p><h4>@line</h4></p>
-                    }
-                }
+                <p><h4>@eve.TomTat</h4></p>
 
             }
             else
@@ -94,14 +86,10 @@
                             <li>
                                 <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=130 height=100 /></a>
                                 <h4><a href="~/Event/Detail/@eve.IDEvent">@eve.TieuDe</a></h4>
-                                @{
-                    var s = new StreamReader(eve.TomTat.ToString());
-                    string line;
-                    while ((line = s.ReadLine()) != null)
-                    {
-                        <h3>@line</h3>
-                    }
-                                }
+                             
+                  
+                        <h3>@eve.TomTat</h3>
+        
                             </li>
                         </ul>
                     </div>

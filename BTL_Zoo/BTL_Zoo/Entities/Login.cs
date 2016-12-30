@@ -17,5 +17,9 @@ namespace BTL_Zoo.Entities
         public string PassWord { get; set; }
 
         public int? MaKH { get; set; }
+
+        public int? Group { get; set; }
+
+        public virtual KhachHang KhachHang { get; set; }
     }
 }

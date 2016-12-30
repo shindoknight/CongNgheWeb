@@ -108,3 +108,7 @@ D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\Micros
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.csprojResolveAssemblyReference.cache
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.dll
 D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\obj\Debug\BTL_Zoo.pdb
+D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\PagedList.dll
+D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\PagedList.Mvc.dll
+D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\PagedList.xml
+D:\1-Study\4-HK6\lap trinh web\New folder\CongNgheWeb\BTL_Zoo\BTL_Zoo\bin\PagedList.Mvc.xml

@@ -370,8 +370,9 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="~/Content/Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/Content/Admin/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Content/Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="~/Content/Admin/vendor/metisMenu/metisMenu.min.js"></script>
@@ -379,8 +380,11 @@
     <script src="~/Content/Admin/vendor/raphael/raphael.min.js"></script>
     <script src="~/Content/Admin/vendor/morrisjs/morris.min.js"></script>
     <script src="~/Content/Admin/data/morris-data.js"></script>
+    <script src="/Content/Admin/js/plugins/ckfinder/ckfinder.js"></script>
     <!-- Custom Theme JavaScript -->
+
     <script src="~/Content/Admin/dist/js/sb-admin-2.js"></script>
+    @RenderSection("jsFooter",required:false)
 </body>
 </html>
 

@@ -21,9 +21,10 @@ namespace BTL_Zoo.Areas.Admin.Controllers
         }
         public ActionResult Create()
         {
+            
             return View();
         }
-        public ActionResult  CreateAction (string user, string pass, int group, string hoten, string ngaysinh, string email, string sdt)
+        public ActionResult  CreateAction (string user, string pass, int group,string diachi, string ngaysinh, string hoten, string email, string sdt,string CMND)
         {
             Login us = new Login();
             us.UserName = user;
@@ -31,11 +32,12 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             us.Group = group;
             KhachHang kh = new KhachHang();
             kh.HoTen = hoten;
-            kh.NgaySinh = DateTime.Parse(ngaysinh);
+           // kh.NgaySinh = DateTime.Parse(ngaysinh,"dd/mm/yyyy");
             kh.Email = email;
             kh.SDT = sdt;
+            kh.DiaChi = diachi;
             var dao = new UserCommon();
-            int n=dao.Insert(us);
+            int n=dao.Insert(us,kh);
             if(n==-1)
             {
 
@@ -49,13 +51,57 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             }
             
         }
-        public ActionResult Edit(string username, string pass, int group)
+        public ActionResult Edit(string username)
+        {
+            var dao = new UserCommon();
+            Login user = dao.GetByUsername(username);
+            ViewBag.username = username;
+            return View(user);
+        }
+        public ActionResult EditAction(string user, string pass, int group, string diachi, string hoten, string email, string sdt,string CMND)
         {
             Login model = new Login();
-            model.UserName = username;
+            model.UserName = user;
             model.PassWord = pass;
             model.Group = group;
-            return View();
+            KhachHang kh = new KhachHang();
+            kh.HoTen = hoten;
+            kh.DiaChi = diachi;
+            kh.Email = email;
+            kh.SDT = sdt;
+            kh.CMND = CMND;
+            UserCommon dao= new UserCommon();
+            bool kt= dao.Edit(model, kh);
+            if (kt)
+            {
+                ModelState.AddModelError("", "Sửa tài khoản thành công!");
+                return RedirectToAction("Index", "User");
+                
+            }
+            else
+            {
+                ModelState.AddModelError("", "Sửa không thành công");
+                return View("Edit/?username="+user,"User");
+            }
+            
+        }
+        [HttpDelete]
+        public ActionResult Delete(string username)
+        {
+            UserCommon dao = new UserCommon();
+            bool result= dao.Delete(username);
+            if (result)
+            {
+                ModelState.AddModelError("", "Xóa Thành công!");
+                return RedirectToAction("Index", "User");
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "xóa không thành công");
+                return RedirectToAction("Index", "User");
+            }
+
         }
 	}
 }

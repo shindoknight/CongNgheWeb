@@ -41,7 +41,14 @@
                                     }
                                 }
                                 <td>@pq</td>
-                                <td><a href="/Admin/User/Edit/@item.UserName">Sửa||</a><a href="/Admin/User/Delete/@item.UserName">Xóa   </a></td>
+                                <td id="row_@item.UserName"><a href="/Admin/User/Edit/?username=@item.UserName">Sửa|</a>
+                                    @Ajax.ActionLink("Xóa", "Delete", new { @username=item.UserName}, new AjaxOptions
+                               {
+                                   Confirm = "Bạn có chắc chắn muốn xóa tài khoản " + item.UserName,
+                                   OnComplete = "$('#row_" + @item.UserName + "').remove()",
+                                   HttpMethod = "Delete"
+                               })
+                                 </td>
                             </tr>
                             }
                             
@@ -52,6 +59,7 @@
                 </div>
                 <!-- /.table-responsive -->
             </div>
+            <a href="/Admin/User/Create">Tạo mới tài khoản</a>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->

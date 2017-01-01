@@ -17,10 +17,14 @@ namespace BTL_Zoo.Commons
         {
             db = new Zoo();
         }
-        public int Insert(Login user)
+        public int Insert(Login user,KhachHang kh)
         {
             if(db.Logins.SingleOrDefault(n=>n.UserName==user.UserName)==null)
             {
+                db.KhachHangs.Add(kh);
+                db.SaveChanges();
+                List<KhachHang> LsKH = db.KhachHangs.OrderByDescending(x => x.MaKH).ToList();
+                user.MaKH = LsKH[0].MaKH;
                 db.Logins.Add(user);
                 db.SaveChanges();
                 return 1;
@@ -32,7 +36,11 @@ namespace BTL_Zoo.Commons
             }
             
         }
-        public bool Edit(Login user)
+        public Login GetByUsername(string username)
+        {
+            return db.Logins.Find(username);
+        }
+        public bool Edit(Login user,KhachHang khachhang)
         {
             try
             {
@@ -40,6 +48,14 @@ namespace BTL_Zoo.Commons
                 us.UserName = user.UserName;
                 us.PassWord = user.PassWord;
                 us.Group = user.Group;
+                KhachHang kh = new KhachHang();
+                kh = db.KhachHangs.Find(us.MaKH);
+                kh.HoTen = khachhang.HoTen;
+                kh.NgaySinh = khachhang.NgaySinh;
+                kh.DiaChi = khachhang.DiaChi;
+                kh.CMND = khachhang.CMND;
+                kh.SDT = khachhang.SDT;
+                kh.Email = khachhang.Email;
                 db.SaveChanges();
                 return true;
             }
@@ -48,6 +64,23 @@ namespace BTL_Zoo.Commons
                 return false;
             }
             
+        }
+        public bool Delete(string username)
+        {
+            try
+            {
+                Login us = db.Logins.Find(username);
+                KhachHang kh = db.KhachHangs.Find(us.MaKH);
+                db.KhachHangs.Remove(kh);
+                db.Logins.Remove(us);
+                db.SaveChanges();
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
         }
         
     }

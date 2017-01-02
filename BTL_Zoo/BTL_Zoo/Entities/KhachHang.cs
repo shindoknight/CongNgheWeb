@@ -14,7 +14,6 @@ namespace BTL_Zoo.Entities
         {
             DatVes = new HashSet<DatVe>();
             Logins = new HashSet<Login>();
-            PhanHois = new HashSet<PhanHoi>();
         }
 
         [Key]
@@ -43,8 +42,5 @@ namespace BTL_Zoo.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Login> Logins { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanHoi> PhanHois { get; set; }
     }
 }

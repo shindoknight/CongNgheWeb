@@ -23,7 +23,6 @@
                                 <th>Tiêu đề</th>
                                 <th>Thời gian</th>
                                 <th>Tóm tắt</th>
-                                <th>Nội dung</th>
                                 
                             </tr>
                         </thead>
@@ -31,12 +30,19 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td><a>Sửa|</a><a>|Xóa</a></td>
-                                    <td><img src="~/Content/images/@item.HinhAnh" alt="" width=60 height=60 /></td>
+                                    <td id ="row_@item.IDEvent">
+                                        <a href="/Admin/EventAdmin/Edit/?id=@item.IDEvent">Sửa|</a>
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.IDEvent }, new AjaxOptions
+                               {
+                                   Confirm = "Bạn có chắc chắn muốn xóa sự kiện" + item.TieuDe,
+                                   OnComplete = "$('#row_" + @item.IDEvent + "').remove()",
+                                   HttpMethod = "Delete"
+                               })
+                                    </td>
+                                    <td><img src="..@item.HinhAnh" alt="" width=60 height=60 /></td>
                                     <td>@item.TieuDe</td>
                                     <td>@item.Thoigian</td>
                                     <td>@item.TomTat</td>
-                                    <td>@item.NoiDung</td>
                                    
                                 </tr>
                             }
@@ -48,7 +54,7 @@
                 </div>
                 <!-- /.table-responsive -->
             </div>
-            <a href="/Admin/User/Create">Tạo mới tài khoản</a>
+            <a href="/Admin/EventAdmin/Create">Viết sự kiện mới</a>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->

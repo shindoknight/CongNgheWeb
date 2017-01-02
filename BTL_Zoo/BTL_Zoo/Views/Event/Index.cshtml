@@ -14,11 +14,11 @@
                 //var tt = @item.TieuDe
                     
                 <li>
-                    <div><a href="~/Event/Detail/@item.IDEvent"><img src="~/Content/images/@item.HinhAnh" /></a></div>
+                    <div><a href="~/Event/Detail/@item.IDEvent"><img src="@item.HinhAnh" /></a></div>
                     <h4>@Html.ActionLink( item.TieuDe, "Detail", new { id = item.IDEvent })</h4>
                      <p> @Html.DisplayFor(modelItem => item.Thoigian)</p>
                   
-                       <p>@item.NoiDung</p>
+                       <p>@Html.Raw(item.NoiDung)</p>
                     
                 </li>
             }

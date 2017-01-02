@@ -22,6 +22,8 @@ namespace BTL_Zoo.Entities
 
         public decimal? TongTien { get; set; }
 
+        public int? DaThanhToan { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDatVe> CTDatVes { get; set; }
 

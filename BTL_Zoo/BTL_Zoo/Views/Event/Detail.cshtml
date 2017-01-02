@@ -6,8 +6,8 @@
     <div id="events">
         <h1>@Model.TieuDe</h1>
         <p><h5>@Model.Thoigian</h5></p>
-        <p><img id="imageevent" src="~/Content/images/@Model.HinhAnh"   /></p>
-                <p><h3>@Model.NoiDung</h3></p>
+        <p><img id="imageevent" src="@Model.HinhAnh"   /></p>
+                <p><h3>@Html.Raw(Model.NoiDung)</h3></p>
 
     </div>
 </div>

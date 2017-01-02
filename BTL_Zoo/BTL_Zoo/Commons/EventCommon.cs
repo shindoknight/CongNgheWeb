@@ -30,5 +30,44 @@ namespace BTL_Zoo.Commons
                 return false;
             }
         }
+        public SuKien GetByID(int id)
+        {
+            return  db.SuKiens.Find(id);
+        }
+        public bool Edit(SuKien eve)
+        {
+            try
+            {
+                SuKien _event = new SuKien();
+                _event = db.SuKiens.Find(eve.IDEvent);
+                _event.TieuDe = eve.TieuDe;
+                _event.HinhAnh = eve.HinhAnh;
+                _event.Thoigian = eve.Thoigian;
+                _event.TomTat = eve.TomTat;
+                _event.NoiDung = eve.NoiDung;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                SuKien _event = new SuKien();
+                _event = db.SuKiens.Find(id);
+                db.SuKiens.Remove(_event);
+                db.SaveChanges();
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

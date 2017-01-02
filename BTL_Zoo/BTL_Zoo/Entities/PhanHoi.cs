@@ -18,10 +18,6 @@ namespace BTL_Zoo.Entities
         [StringLength(1000)]
         public string NoiDung { get; set; }
 
-        public int? IDEvent { get; set; }
-
-        public virtual KhachHang KhachHang { get; set; }
-
-        public virtual SuKien SuKien { get; set; }
+        public int? HienThi { get; set; }
     }
 }

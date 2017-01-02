@@ -23,15 +23,17 @@ namespace BTL_Zoo.Controllers
             return View("Index", tblDongvat);
         }
 
-
+        /*
         [HttpPost]
-        public ActionResult TimKiemDongVat(string TenDv, string TenKH, string ThucAn, string NguonGoc, string ChieuCao)
+        
+        public ActionResult TimKiemDongVat(string TenDv, string TenKH, string ThucAn, string NguonGoc, double ChieuCao)
         {
             List<DongVat> tblDongVat = db.DongVats.Where(x => x.TenDV.Contains(TenDv) && x.TenKH.Contains(TenKH) && x.ThucAn.Contains(ThucAn) && x.NguonGoc.Contains(NguonGoc) && x.ChieuCao.Contains(ChieuCao)).ToList();
             //List<DongVat> tblDongVat = db.DongVats.SqlQuery("");
 
             return View("Index", tblDongVat);
         }
+         * */
         
         public ActionResult ThongTinChiTiet(int maDv)
         {

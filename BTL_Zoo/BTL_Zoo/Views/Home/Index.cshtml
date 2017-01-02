@@ -44,18 +44,22 @@
     <div class="section1">
         <h2>Phản hồi</h2>
         <ul id="article">
-            <li class="first">
-                <a href="#"><span>Jul 17</span></a>
-                <p>Vườn thú tuyệt vời, rất thích hợp cho những buổi vui chơi của gia đình vào cuối tuần. Tôi đã có 1 ngày nghỉ tuyệt vời cùng gia đình tôi ở đây!</p>
-            </li>
-            <li>
-                <a href="#"><span>Aug 23</span></a>
-                <p>Tôi nghĩ Vườn thú nên bổ sung những con vật lạ hơn nữa. Những động vật ở đây đã có từ rất lâu rồi</p>
-            </li>
-            <li>
-                <a href="#"><span>Oct 01</span></a>
-                <p>Nhà vệ sinh thật tồi tàn, vườn thú nên nâng cấp nhà vệ sinh!</p>
-            </li>
+            @{
+                var b = 0;
+            }
+            @foreach (var item in Model.LsPhanHoi)
+            {
+
+
+               <li>
+                <p style="font-weight:bold"><span>@item.HoTen</span></p>
+                   <p style="font-style:italic">@item.ThoiGian</p>
+                <p>@item.NoiDung</p>
+                </li>
+               b++;
+                if (b == 3) { break; }
+            }
+            
         </ul>
     </div>
     <div class="section2">
@@ -69,43 +73,65 @@
             if (count == 1)
             {
                 <p>@eve.TieuDe</p>
-                <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=200 height=150/></a>
-               
-                        {
-                        var s = new StreamReader(eve.TomTat.ToString());
-                        string line;
-                        while ((line = s.ReadLine()) != null)
-                          {
-                            <p><h4>@line</h4></p>
-                           }
-                        }
-                       
+                <a href="~/Event/Detail/@eve.IDEvent"><img src="@eve.HinhAnh" alt="" width=200 height=150 /></a>
+                <p><h4>@eve.TomTat</h4></p>
+
             }
             else
             {
-                if(count<4)
+                if (count < 4)
                 {
                     <div id="section1">
-                    <ul>
-                        <li class="tit"> <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=130 height=80 /></a>
-                         <h4><a href="~/Event/Detail/@eve.IDEvent">@eve.TieuDe</a></h4>
-                        @{
-                             var s = new StreamReader(eve.TomTat.ToString());
-                                string line;
-                            while ((line = s.ReadLine()) != null)
-                            {
-                                <p><h4>@line</h4></p>
-                            }
-                        }
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                <a href="~/Event/Detail/@eve.IDEvent"><img src="@eve.HinhAnh" alt="" width=130 height=100 /></a>
+                                <h4><a href="~/Event/Detail/@eve.IDEvent">@eve.TieuDe</a></h4>
+                             
+                  
+                        <h3>@eve.TomTat</h3>
+        
+                            </li>
+                        </ul>
                     </div>
                 }
+                /*else
+                {
+                    <div id="section2">
+                        <ul>
+                            <li>
+                                <a href="~/Event/Detail/@eve.IDEvent"><img src="~/Content/images/@eve.HinhAnh" alt="" width=130 height=100 /></a>
+                                <h4><a href="~/Event/Detail/@eve.IDEvent">@eve.TieuDe</a></h4>
+                                @{
+                                    var s = new StreamReader(eve.TomTat.ToString());
+                                    string line;
+                                    while ((line = s.ReadLine()) != null)
+                            {
+                                     <p>@line</p>
+                            }
+
+                                    }
+                            </li>
+                        </ul>
+                     </div>
+                 }*/
             }
+            if (count == 3) { break; }
         }
+        
     </div>
-
-
-
+    <div class="section3">
+        <h2>Liên hệ</h2>
+        <a href="#" id="email">Email cho chúng tôi</a> <a href="https://www.facebook.com/shindoknight" id="facebook">Facebook</a> <a href="https://twitter.com" id="twitter">Twitter</a>
+        <form action="~/PhanHoi/Subcribe">
+            <h3>Đăng ký để nhận <br/></h3>
+            <h2>TIN TỨC MỚI NHẤT</h2>
+            <input type="text" name="mail" value="email của bạn..." onblur="this.value = !this.value ? 'email của bạn...' : this.value;" onfocus="    this.select()" onclick="    this.value = '';" />
+        </form>
+        <img src="~/Content/images/penguin2.jpg" alt="" />
+    </div>
 </div>
+
+
+
+
 

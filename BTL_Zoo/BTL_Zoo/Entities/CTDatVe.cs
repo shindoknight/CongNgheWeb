@@ -20,5 +20,13 @@ namespace BTL_Zoo.Entities
         public int MaVe { get; set; }
 
         public int? SoLuong { get; set; }
+
+        public DateTime? NgayDatve { get; set; }
+
+        public int? TreGia { get; set; }
+
+        public virtual DatVe DatVe { get; set; }
+
+        public virtual Ve Ve { get; set; }
     }
 }

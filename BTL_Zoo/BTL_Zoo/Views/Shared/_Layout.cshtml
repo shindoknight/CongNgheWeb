@@ -30,33 +30,42 @@
             <a href="#" id="logo"><img src="~/Content/images/logo2.png" alt="" /></a>
             <ul id="navigation">
                 <li id="link1"><a href="~/Home">Trang chủ</a></li>
+<<<<<<< HEAD
+                <li id="link2"><a href="zoo.html">  Giới thiệu</a></li>
+                <li id="link3"><a href="info.html">Nội Quy</a></li>
+                <li id="link4"><a href="tickets.html">Đặt Vé</a></li>
+                <li id="link5"><a href="~/Event">Sự Kiện</a></li>
+                <li id="link6"><a href="gallery.html">  Động Vật</a></li>
+=======
                 <li id="link2"><a href="zoo.html">Giới thiệu</a></li>
                 <li id="link3"><a href="@Url.Action("Index","NoiQuy")">Nội Quy</a></li>
                 <li id="link4"><a href="tickets.html">Đặt Vé</a></li>
                 <li id="link5"><a href="~/Event">Sự Kiện</a></li>
                 <li id="link6"><a href="@Url.Action("Index","DongVat")">Động Vật</a></li>
+>>>>>>> master
                 <li id="link7"><a href="~/Contact">Liên hệ</a></li>
             </ul>
             
         </div>
             @RenderBody()
-        <div id="footer">
+        
+    </div>
+    <div id="footer">
+        <div>
+            <a href="#" class="logo"><img src="~/Content/images/animal-kingdom.jpg" alt="" /></a>
             <div>
-                <a href="#" class="logo"><img src="~/Content/images/animal-kingdom.jpg" alt="" /></a>
-                <div>
-                    <p>Bài tập lớp<br/>Hiệp - Tuấn - Linh</p>
-                    <span>01234 000 000</span> <span>BTL@zoo.com</span>
-                </div>
-                <ul class="navigation">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tickets.html">Tickets</a></li>
-                    <li><a href="zoo.html">The Zoo</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-          
+                <p>Bài tập lớp<br />Hiệp - Tuấn - Linh</p>
+                <span>01234 000 000</span> <span>BTL@zoo.com</span>
             </div>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="zoo.html">The Zoo</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+
         </div>
     </div>
    

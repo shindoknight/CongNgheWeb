@@ -17,7 +17,9 @@ namespace BTL_Zoo.Entities
         public virtual DbSet<DongVat> DongVats { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
+        public virtual DbSet<PhanHoi> PhanHois { get; set; }
         public virtual DbSet<SuKien> SuKiens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,9 +28,19 @@ namespace BTL_Zoo.Entities
                 .Property(e => e.TongTien)
                 .HasPrecision(18, 0);
 
+            modelBuilder.Entity<DatVe>()
+                .HasMany(e => e.CTDatVes)
+                .WithRequired(e => e.DatVe)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Ve>()
                 .Property(e => e.GiaTien)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .HasMany(e => e.CTDatVes)
+                .WithRequired(e => e.Ve)
+                .WillCascadeOnDelete(false);
         }
     }
 }

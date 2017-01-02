@@ -15,10 +15,10 @@ namespace BTL_Zoo.Entities
         [StringLength(100)]
         public string TieuDe { get; set; }
 
-        [StringLength(100)]
+        [StringLength(500)]
         public string TomTat { get; set; }
 
-        [StringLength(100)]
+        [Column(TypeName = "ntext")]
         public string NoiDung { get; set; }
 
         [StringLength(100)]

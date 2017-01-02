@@ -40,7 +40,7 @@
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true)
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" });
                              @Html.HiddenFor(model => model.IDEvent)
                             <div class="form-group">
                                 <label>Tiêu đề</label><br />

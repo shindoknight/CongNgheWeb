@@ -171,21 +171,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnimalAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BuyTicketController.cs" />
     <Compile Include="Areas\Admin\Controllers\EventAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Commons\AnimalCommon.cs" />
     <Compile Include="Commons\EventCommon.cs" />
+    <Compile Include="Commons\TicketCommon.cs" />
     <Compile Include="Commons\UserCommon.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DongVatController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\PhanHoiController.cs" />
-=======
     <Compile Include="Controllers\NoiQuyController.cs" />
->>>>>>> master
     <Compile Include="Entities\CTDatVe.cs" />
     <Compile Include="Entities\DatVe.cs" />
     <Compile Include="Entities\DongVat.cs" />
@@ -196,22 +197,19 @@
     <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\Ve.cs" />
     <Compile Include="Entities\Zoo.cs" />
+    <Compile Include="Models\BuyTicketModel.cs" />
     <Compile Include="Models\ListZoo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Models\model_Event.cs" />
     <Compile Include="Models\PhanHoi2.cs" />
     <Compile Include="Models\PhanHoiModel.cs" />
-=======
     <Compile Include="Models\ModelTimKiem.cs" />
->>>>>>> master
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Content\Admin\data\flot-data.js" />
     <Content Include="Content\Admin\data\morris-data.js" />
     <Content Include="Content\Admin\dist\css\sb-admin-2.css" />
@@ -1291,10 +1289,8 @@
     <Content Include="Content\Admin\vendor\morrisjs\morris.min.js" />
     <Content Include="Content\Admin\vendor\raphael\raphael.js" />
     <Content Include="Content\Admin\vendor\raphael\raphael.min.js" />
-=======
     <Content Include="Content\css.css" />
     <Content Include="Content\DongVat.css" />
->>>>>>> master
     <Content Include="Content\images\animal-kingdom.jpg" />
     <Content Include="Content\images\bg-body.gif" />
     <Content Include="Content\images\bg-footer.gif" />
@@ -1336,21 +1332,24 @@
     <Content Include="Content\images\turtle.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Data\files\883f7c673166710eb3b500c9bd8f9cc5.jpg" />
+    <Content Include="Data\files\SinhVienIT_NET---resized-windows-7-wallpaper-40.jpg" />
+    <Content Include="Data\images\images645193_1.jpg" />
+    <Content Include="Data\_thumbs\Files\883f7c673166710eb3b500c9bd8f9cc5.jpg" />
+    <Content Include="Data\_thumbs\Files\SinhVienIT_NET---resized-windows-7-wallpaper-40.jpg" />
+    <Content Include="Data\_thumbs\Images\images645193_1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-<<<<<<< HEAD
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-=======
     <Content Include="Scripts\js.js" />
     <Content Include="Text\noidung1.txt" />
     <Content Include="Text\noidung2.txt" />
     <Content Include="Text\tomtat1.txt" />
     <Content Include="Text\tomtat2.txt" />
->>>>>>> master
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1364,11 +1363,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Data\" />
-=======
->>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1456,21 +1451,22 @@
     <Content Include="Areas\Admin\Views\Shared\_HeaderNavigation.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\EventAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimalAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimalAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AnimalAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BuyTicket\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\PhanHoi\Subcribe.cshtml" />
-=======
     <Content Include="Views\NoiQuy\Index.cshtml" />
     <Content Include="Views\DongVat\partial.cshtml" />
     <Content Include="Views\Shared\DongVat.cshtml" />
     <Content Include="Views\DongVat\Index.cshtml" />
     <Content Include="Views\Shared\ChiTietDongVat.cshtml" />
     <Content Include="Views\DongVat\ThongTinChiTiet.cshtml" />
->>>>>>> master
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

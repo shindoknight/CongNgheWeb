@@ -8,7 +8,7 @@ namespace BTL_Zoo.Entities
     public partial class Zoo : DbContext
     {
         public Zoo()
-            : base("name=Zoo2")
+            : base("name=Zoo")
         {
         }
 
@@ -35,6 +35,22 @@ namespace BTL_Zoo.Entities
 
             modelBuilder.Entity<Ve>()
                 .Property(e => e.GiaTien)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaMoiTreEm)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaMoiNguoiLon)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaCuTreEm)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaCuNguoiLon)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Ve>()

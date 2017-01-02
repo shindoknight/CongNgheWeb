@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BTL_Zoo.Commons;
 using BTL_Zoo.Entities;
+using BTL_Zoo.Commons;
 namespace BTL_Zoo.Areas.Admin.Controllers
 {
-    public class EventAdminController : Controller
+    public class AnimalAdminController : Controller
     {
         //
-        // GET: /Admin/Event/
-        public ActionResult Index(int page=1,int pagesize=10)
+        // GET: /Admin/AnimalAdmin/
+        public ActionResult Index(int page = 1, int pagesize = 10)
         {
-            var dao = new EventCommon();
-            var model = dao.ListEvent(page, pagesize);
+            var dao = new AnimalCommon();
+            var model = dao.ListAnimal(page, pagesize);
             return View(model);
         }
         [HttpGet]
@@ -23,50 +23,41 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(SuKien eve)
+        public ActionResult Create(DongVat animal)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                EventCommon _event = new EventCommon();
-                if (_event.Add(eve))
-                {
-                    ModelState.AddModelError("", "Thêm Thành công!");
-                    return Redirect("/Admin/EventAdmin/Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "sửa Thành công!");
-                    return View();
-                }
-                
+                AnimalCommon _ani = new AnimalCommon();
+                _ani.Add(animal);
+                return Redirect("/Admin/AnimalAdmin/Index");
             }
             return View();
         }
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            SuKien model = new EventCommon().GetByID(id);
+            DongVat model = new AnimalCommon().GetByID(id);
             return View(model);
         }
         [HttpPost]
-        public ActionResult Edit(SuKien eve)
+        public ActionResult Edit(DongVat eve)
         {
-            if(new EventCommon().Edit(eve))
+            if (new AnimalCommon().Edit(eve))
             {
-                ModelState.AddModelError("", "sửa Thành công!");
+                ModelState.AddModelError("", "Sửa Thành công!");
                 return Redirect("/Admin/EventAdmin/Index");
             }
             else
             {
-                ModelState.AddModelError("", "sửa không thành công");
+                ModelState.AddModelError("", "xóa không thành công");
                 return View();
             }
-            
+           
         }
         [HttpDelete]
         public ActionResult Delete(int id)
         {
-            EventCommon dao = new EventCommon();
+            AnimalCommon dao = new AnimalCommon();
             bool result = dao.Delete(id);
             if (result)
             {

@@ -26,13 +26,13 @@ namespace BTL_Zoo.Entities
 
         public int? LoaiVe { get; set; }
 
-        public int? GiaMoiTreEm { get; set; }
+        public decimal? GiaMoiTreEm { get; set; }
 
-        public int? GiaMoiNguoiLon { get; set; }
+        public decimal? GiaMoiNguoiLon { get; set; }
 
-        public int? GiaCuTreEm { get; set; }
+        public decimal? GiaCuTreEm { get; set; }
 
-        public int? GiaCuNguoiLon { get; set; }
+        public decimal? GiaCuNguoiLon { get; set; }
 
         public int? ThuTu { get; set; }
 

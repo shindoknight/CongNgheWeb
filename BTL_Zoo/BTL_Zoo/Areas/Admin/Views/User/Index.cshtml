@@ -25,32 +25,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(var item in Model)
-                            {
-                                <tr>
-                                <td>@item.UserName</td>
-                                <td>@item.PassWord</td>
-                                @{
-                                    var pq="";
-                                    switch (item.Group)
-                                    {
-                                        case 1: pq = "Admin"; break;
-                                        case 2: pq = "Nhân viên"; break;
-                                        case 3: pq = "Khách hàng"; break;
-                                           
-                                    }
-                                }
-                                <td>@pq</td>
-                                <td id="row_@item.UserName"><a href="/Admin/User/Edit/?username=@item.UserName">Sửa|</a>
-                                    @Ajax.ActionLink("Xóa", "Delete", new { @username=item.UserName}, new AjaxOptions
+                            @foreach (var item in Model)
+{
+    <tr id="row_@item.UserName">
+        <td>@item.UserName</td>
+        <td>@item.PassWord</td>
+        @{
+    var pq = "";
+    switch (item.Group)
+    {
+        case 1: pq = "Admin"; break;
+        case 2: pq = "Nhân viên"; break;
+        case 3: pq = "Khách hàng"; break;
+
+    }
+        }
+        <td>@pq</td>
+        <td>
+            <a href="/Admin/User/Edit/?username=@item.UserName">Sửa|</a>
+            @Ajax.ActionLink("Xóa", "Delete", new { @username = item.UserName }, new AjaxOptions
                                {
                                    Confirm = "Bạn có chắc chắn muốn xóa tài khoản " + item.UserName,
                                    OnComplete = "$('#row_" + @item.UserName + "').remove()",
                                    HttpMethod = "Delete"
                                })
-                                 </td>
-                            </tr>
-                            }
+        </td>
+    </tr>
+}
                             
                            
                         </tbody>

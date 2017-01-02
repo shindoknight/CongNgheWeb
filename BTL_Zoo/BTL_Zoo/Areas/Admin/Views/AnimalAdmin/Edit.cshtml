@@ -42,6 +42,8 @@
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+                            @Html.HiddenFor(model => model.MaDV)
                             <div class="form-group">
                                 <label>Tên Động Vật</label>
                                 <div>

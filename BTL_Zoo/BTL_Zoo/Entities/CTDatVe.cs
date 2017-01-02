@@ -21,9 +21,10 @@ namespace BTL_Zoo.Entities
 
         public int? SoLuong { get; set; }
 
-        public DateTime? NgayDatve { get; set; }
-
-        public int? TreGia { get; set; }
+        [Key]
+        [Column(Order = 2)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int TreGia { get; set; }
 
         public virtual DatVe DatVe { get; set; }
 

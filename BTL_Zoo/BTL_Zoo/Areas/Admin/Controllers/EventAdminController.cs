@@ -28,8 +28,17 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             if(ModelState.IsValid)
             {
                 EventCommon _event = new EventCommon();
-                _event.Add(eve);
-                return Redirect("/Admin/EventAdmin/Index");
+                if (_event.Add(eve))
+                {
+                    ModelState.AddModelError("", "Thêm Thành công!");
+                    return Redirect("/Admin/EventAdmin/Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "sửa Thành công!");
+                    return View();
+                }
+                
             }
             return View();
         }
@@ -44,9 +53,15 @@ namespace BTL_Zoo.Areas.Admin.Controllers
         {
             if(new EventCommon().Edit(eve))
             {
+                ModelState.AddModelError("", "sửa Thành công!");
                 return Redirect("/Admin/EventAdmin/Index");
             }
-            return View();
+            else
+            {
+                ModelState.AddModelError("", "sửa không thành công");
+                return View();
+            }
+            
         }
         [HttpDelete]
         public ActionResult Delete(int id)

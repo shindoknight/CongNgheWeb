@@ -31,11 +31,11 @@
                                                         @foreach (var item in Model)
                             {
                                 <tr id ="row_@item.MaDV">
-<td >
-                                        <a href="/Admin/EventAdmin/Edit/?id=@item.MaDV">Sửa|</a>
+        <td >
+                                        <a href="/Admin/AnimalAdmin/Edit/?id=@item.MaDV">Sửa|</a>
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.MaDV }, new AjaxOptions
                                {
-                                   Confirm = "Bạn có chắc chắn muốn xóa sự kiện" + item.TenDV,
+                                   Confirm = "Bạn có chắc chắn muốn xóa động vật" + item.TenDV,
                                    OnComplete = "$('#row_" + @item.MaDV + "').remove()",
                                    HttpMethod = "Delete"
                                })
@@ -46,7 +46,7 @@
                                     <td>@item.ChieuCao</td>
                                     <td>@item.CanNang</td>
 
-                                </trid>
+                                </tr>
                             }
 
 

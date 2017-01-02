@@ -38,6 +38,22 @@ namespace BTL_Zoo.Entities
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaMoiTreEm)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaMoiNguoiLon)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaCuTreEm)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.GiaCuNguoiLon)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
                 .HasMany(e => e.CTDatVes)
                 .WithRequired(e => e.Ve)
                 .WillCascadeOnDelete(false);

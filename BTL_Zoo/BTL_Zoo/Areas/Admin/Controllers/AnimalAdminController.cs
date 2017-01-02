@@ -44,9 +44,15 @@ namespace BTL_Zoo.Areas.Admin.Controllers
         {
             if (new AnimalCommon().Edit(eve))
             {
+                ModelState.AddModelError("", "Sửa Thành công!");
                 return Redirect("/Admin/EventAdmin/Index");
             }
-            return View();
+            else
+            {
+                ModelState.AddModelError("", "xóa không thành công");
+                return View();
+            }
+           
         }
         [HttpDelete]
         public ActionResult Delete(int id)

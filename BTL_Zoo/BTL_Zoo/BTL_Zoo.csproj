@@ -172,12 +172,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AnimalAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BuyTicketController.cs" />
     <Compile Include="Areas\Admin\Controllers\EventAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Commons\AnimalCommon.cs" />
     <Compile Include="Commons\EventCommon.cs" />
+    <Compile Include="Commons\TicketCommon.cs" />
     <Compile Include="Commons\UserCommon.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DongVatController.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Entities\Ve.cs" />
     <Compile Include="Entities\Zoo.cs" />
+    <Compile Include="Models\BuyTicketModel.cs" />
     <Compile Include="Models\ListZoo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1451,6 +1454,7 @@
     <Content Include="Areas\Admin\Views\AnimalAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AnimalAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AnimalAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BuyTicket\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />

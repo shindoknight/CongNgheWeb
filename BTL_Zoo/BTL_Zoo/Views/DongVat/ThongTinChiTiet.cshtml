@@ -1,0 +1,40 @@
+﻿@model IEnumerable< BTL_Zoo.Entities.DongVat>
+
+@{
+    ViewBag.Title = "ThongTinChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <div id="gallery">
+        <ul style="width: 800px;">
+            <li>
+                <table>
+                    @foreach(var item in Model)
+                    { 
+                    <tr>
+                        <img src="~/Content/Images/@item.HinhAnh" alt="">
+                    </tr>
+                        <tr><p>Tên Động Vật: @item.TenDV </p> </tr>
+                        <tr><p>Tên Khoa Học: @item.TenKH</p> </tr>
+                        <tr><p>Thuộc Họ: @item.Ho</p></tr>
+                        <tr><p>Thuộc Bộ: @item.Bo</p></tr>
+                        <tr><p>Thức Ăn Chung: @item.ThucAn</p></tr>
+                        <tr><p>Nguồn gốc @item.NguonGoc</p></tr>
+                        <tr><p>Chiều Cao @item.ChieuCao</p></tr>
+                        <tr><p>Cân Nặng:  @item.CanNang</p></tr>
+                        <tr><p>Nơi Sinh Sống Chủ Yếu:  @item.NoiSinhSong</p></tr>
+                        <tr><p>Giới Thiệu Tổng Quát:  @item.GioiThieu</p></tr>
+                        
+                  }
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+

@@ -7,16 +7,42 @@
 </head>
 <body>
     <div id="page">
-        <div id="menubar" align="right"> <a><h3>Login</h3></a></div>
+
+        <div id="menubar" align="right">
+            <script>
+                function Search(event) {
+                    if (event.keyCode == 13) {
+                        var tenDv = document.getElementById("searchtxt").value;
+                        var url = '@Url.Action("TimKiemNhanh","DongVat")?txtTenDv=' + tenDv;
+                        window.location.href = url;
+                    }
+                }
+            </script>
+            <div>
+                <input type="text" placeholder="Tìm Kiếm" id="searchtxt" onkeypress="Search(event)" />
+            </div>
+
+       
+
+
+         <a><h3>Login</h3></a></div>
         <div id="header">
             <a href="#" id="logo"><img src="~/Content/images/logo2.png" alt="" /></a>
             <ul id="navigation">
                 <li id="link1"><a href="~/Home">Trang chủ</a></li>
+<<<<<<< HEAD
                 <li id="link2"><a href="zoo.html">  Giới thiệu</a></li>
                 <li id="link3"><a href="info.html">Nội Quy</a></li>
                 <li id="link4"><a href="tickets.html">Đặt Vé</a></li>
                 <li id="link5"><a href="~/Event">Sự Kiện</a></li>
                 <li id="link6"><a href="gallery.html">  Động Vật</a></li>
+=======
+                <li id="link2"><a href="zoo.html">Giới thiệu</a></li>
+                <li id="link3"><a href="@Url.Action("Index","NoiQuy")">Nội Quy</a></li>
+                <li id="link4"><a href="tickets.html">Đặt Vé</a></li>
+                <li id="link5"><a href="~/Event">Sự Kiện</a></li>
+                <li id="link6"><a href="@Url.Action("Index","DongVat")">Động Vật</a></li>
+>>>>>>> master
                 <li id="link7"><a href="~/Contact">Liên hệ</a></li>
             </ul>
             

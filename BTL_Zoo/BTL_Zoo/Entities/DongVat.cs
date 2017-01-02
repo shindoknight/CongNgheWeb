@@ -26,7 +26,9 @@ namespace BTL_Zoo.Entities
 
         [StringLength(100)]
         public string HinhAnh { get; set; }
+        public string GioiThieu { set; get; }
 
+<<<<<<< HEAD
         [Column(TypeName = "ntext")]
         public string GioiThieu { get; set; }
 
@@ -46,5 +48,18 @@ namespace BTL_Zoo.Entities
         public int? MaVe { get; set; }
 
         public virtual Ve Ve { get; set; }
+=======
+        [StringLength(100)]
+        public string ThucAn { get; set; }
+        
+        public string NguonGoc { set; get; }
+        public string ChieuCao { set; get; }
+        public string CanNang { set; get; }
+        public string NoiSinhSong { set; get; }
+        public int? MaVe { set; get; }
+
+
+
+>>>>>>> master
     }
 }

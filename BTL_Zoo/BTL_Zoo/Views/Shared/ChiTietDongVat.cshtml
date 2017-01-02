@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Kingdom Zoo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+</head>
+<body>
+    <div id="page">
+
+        <div id="menubar" align="right">
+            <script>
+                function Search(event) {
+                    if (event.keyCode == 13) {
+                        var tenDv = document.getElementById("searchtxt").value;
+                        var url = '@Url.Action("TimKiemNhanh","DongVat")?txtTenDv=' + tenDv;
+                        window.location.href = url;
+                    }
+                }
+            </script>
+            <div>
+                <input type="text" placeholder="Tìm Kiếm" id="searchtxt" onkeypress="Search(event)" />
+            </div>
+
+
+
+
+            <a><h3>Login</h3></a>
+        </div>
+        <div id="header">
+            <a href="#" id="logo"><img src="~/Content/images/logo2.png" alt="" /></a>
+            <ul id="navigation">
+            </ul>
+        </div>
+        @RenderBody()
+        <div id="footer">
+            <div>
+                <a href="#" class="logo"><img src="~/Content/images/animal-kingdom.jpg" alt="" /></a>
+                <div>
+                    <p>Bài tập lớp<br />Hiệp - Tuấn - Linh</p>
+                    <span>01234 000 000</span> <span>BTL@zoo.com</span>
+                </div>
+                <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="zoo.html">The Zoo</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model List<BTL_Zoo.Entities.DongVat>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/DongVat.cshtml";
+}
+
+<div id="content">
+    <div id="gallery">
+        <ul style="width: 800px;">
+            @foreach (var item in Model)
+            {
+
+                <li>
+                    <table>
+                       <a href="@Url.Action("ThongTinChiTiet", "DongVat", new { @maDv = item.MaDV})">
+                            <tr>
+                                <img src="~/Content/Images/@item.HinhAnh" alt="">
+                            </tr>
+                            <tr><p> @item.TenDV: </p> </tr>
+                            <tr> <p>@item.TenKH</p> </tr>
+
+                                 <!--
+                        <tr>
+                             <div class="more">
+                             </div>
+                         </tr>
+                         -->
+                        </a>
+                    </table>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+@Html.Partial("partial")
+
+

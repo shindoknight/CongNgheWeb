@@ -24,6 +24,10 @@ namespace BTL_Zoo.Entities
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CTDatVe>()
+                .Property(e => e.SoLuong)
+                .HasPrecision(18, 0);
+
             modelBuilder.Entity<DatVe>()
                 .Property(e => e.TongTien)
                 .HasPrecision(18, 0);
@@ -51,6 +55,14 @@ namespace BTL_Zoo.Entities
 
             modelBuilder.Entity<Ve>()
                 .Property(e => e.GiaCuNguoiLon)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.SLVe)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.SLDaMua)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Ve>()

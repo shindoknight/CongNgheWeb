@@ -19,12 +19,14 @@ namespace BTL_Zoo.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MaVe { get; set; }
 
-        public int? SoLuong { get; set; }
+        public decimal? SoLuong { get; set; }
 
         [Key]
         [Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TreGia { get; set; }
+
+        public int DaXoa { get; set; }
 
         public virtual DatVe DatVe { get; set; }
 

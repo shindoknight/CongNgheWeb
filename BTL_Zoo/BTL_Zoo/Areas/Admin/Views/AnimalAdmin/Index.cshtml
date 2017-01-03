@@ -13,6 +13,19 @@
                 Danh sách tài khoản
             </div>
             <!-- /.panel-heading -->
+            @using (Html.BeginForm("Index", "AnimalAdmin", FormMethod.Get))
+            {
+                <div class="panel-body">
+                    <div class="input-group custom-search-form">
+                        <input type="text" name="tkstring" value="@ViewBag.tk" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            }
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">

@@ -11,7 +11,7 @@ namespace BTL_Zoo.Areas.Admin.Controllers
     {
         //
         // GET: /Admin/BuyTicket/
-        public ActionResult Index(int? k=1, int page = 1, int pagesize = 10)
+        public ActionResult Index(string tkstring,int? k=1, int page = 1, int pagesize = 10)
         {
             int tk = 1;
             var dao = new TicketCommon();
@@ -31,7 +31,8 @@ namespace BTL_Zoo.Areas.Admin.Controllers
                 ViewBag.tit="Danh sách vé chưa GỬI ĐI";
                 tk = 3;
             }
-             var model = dao.ListBuyTicket(page, pagesize,tk);
+             var model = dao.ListBuyTicket(tkstring,page, pagesize,tk);
+             ViewBag.tk = tkstring;
             return View(model);
         }
         public ActionResult DaGui(int id)
@@ -63,7 +64,7 @@ namespace BTL_Zoo.Areas.Admin.Controllers
                 if(kt==0)
                 ModelState.AddModelError("", "sửa không thành công");
                 else
-                    ModelState.AddModelError("", "Vé đã được thanh toán");
+                    ModelState.AddModelError("", "Vé đã được thanh toán trước đó");
 
             }
             return RedirectToAction("Index","BuyTicket");

@@ -25,5 +25,7 @@ namespace BTL_Zoo.Entities
         public string HinhAnh { get; set; }
 
         public DateTime? Thoigian { get; set; }
+
+        public int DaXoa { get; set; }
     }
 }

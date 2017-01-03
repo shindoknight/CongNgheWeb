@@ -1,20 +1,20 @@
-﻿@model PagedList.IPagedList<BTL_Zoo.Entities.DatVe>
+﻿@model PagedList.IPagedList<BTL_Zoo.Entities.PhanHoi>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh sách Vé thanh toán</h2>
+<h2>Danh sách phản hồi</h2>
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 @ViewBag.tit
             </div>
-            @Html.ValidationSummary(true)
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
             <!-- /.panel-heading -->
-            @using (Html.BeginForm("Index", "BuyTicket", FormMethod.Get))
+            @using (Html.BeginForm("Index", "Respond", FormMethod.Get))
             {
                 <div class="panel-body">
                     <div class="input-group custom-search-form">
@@ -35,39 +35,35 @@
                         <thead>
                             <tr>
                                 <th>Thao tác</th>
-                                <th>Mã đặt vé</th>
+                                <th>#</th>
                                 <th>Khách hàng</th>
-                                <th>Chi tiết đặt</th>
-                                <th>Tổng tiền</th>
-                                <th>Địa chỉ giao hàng</th>
-                                <th>Đã gửi</th>
-                                <th>Đã thanh toán</th>
+                                <th>Phản Hồi</th>
+                                <th>Thời gian</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr id="row_@item.MaDatVe">
+                                <tr id="row_@item.ID">
                                     <td>
-                                        <a href="/Admin/BuyTicket/DaGui/?id=@item.MaDatVe">Đã gửi|</a><br/>
-                                        <a href="/Admin/BuyTicket/DaThanhToan/?id=@item.MaDatVe">Đã thanh toán|</a><br/>
-                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.MaDatVe }, new AjaxOptions
+                                        <a href="/Admin/BuyTicket/DaGui/?id=@item.ID">Đã gửi|</a><br />
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
                                {
-                                   Confirm = "Bạn có chắc chắn muốn xóa sự kiện" + item.MaDatVe,
-                                   OnComplete = "$('#row_" + @item.MaDatVe + "').remove()",
+                                   Confirm = "Bạn có chắc chắn muốn xóa sự kiện" + item.ID,
+                                   OnComplete = "$('#row_" + @item.ID + "').remove()",
                                    HttpMethod = "Delete"
                                })
                                     </td>
-                                    <td>@item.MaDatVe" </td>
-                                    <td>@item.KhachHang.HoTen"</td>
+                                    <td>@item.ID </td>
+                                    <td>@item..HoTen</td>
                                     @{
                                 var ctdatve = item.CTDatVes.Where(x => x.MaDatVe == item.MaDatVe).ToList();
                                     }
                                     <td>
                                         @foreach (var x in ctdatve)
                                         {
-                                            var kt="";
+                                            var kt = "";
                                             if (x.TreGia == 1)
                                             {
                                                 kt = "Trẻ em";
@@ -76,7 +72,7 @@
                                             {
                                                 kt = "Người lớn";
                                             }
-                                               
+
                                             <p>@x.Ve.TenVe:@x.SoLuong @kt </p>
                                         }
                                     </td>
@@ -93,7 +89,7 @@
                                             dg = "Chưa gửi";
                                         }
                                     }
-                                    <td>@dg</td> 
+                                    <td>@dg</td>
                                     @{
                                         var dtt = "";
                                         if (item.DaThanhToan == 1)
@@ -105,7 +101,7 @@
                                             dtt = "Chưa thanh toán";
                                         }
                                     }
-                                    <td>@dtt</td> 
+                                    <td>@dtt</td>
 
                                 </tr>
                             }
@@ -123,4 +119,3 @@
         <!-- /.panel -->
     </div>
 </div>
-

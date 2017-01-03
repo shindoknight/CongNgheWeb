@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BTL_Zoo.Entities;
 using BTL_Zoo.Commons;
+using BTL_Zoo.Entities;
 namespace BTL_Zoo.Areas.Admin.Controllers
 {
-    public class AnimalAdminController : Controller
+    public class TicketController : Controller
     {
         //
-        // GET: /Admin/AnimalAdmin/
-        public ActionResult Index(string tkstring,int page = 1, int pagesize = 10)
+        // GET: /Admin/Ticket/
+        public ActionResult Index(string tkstring,int page=1, int pagesize=5)
         {
-            var dao = new AnimalCommon();
-            var model = dao.ListAnimal(tkstring,page, pagesize);
+            var model = new TicketCommon().ListTicket(tkstring,page, pagesize);
             ViewBag.tk = tkstring;
             return View(model);
         }
@@ -25,42 +24,51 @@ namespace BTL_Zoo.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(DongVat animal)
+        public ActionResult Create(Ve eve)
         {
             if (ModelState.IsValid)
             {
-                AnimalCommon _ani = new AnimalCommon();
-                _ani.Add(animal);
-                return Redirect("/Admin/AnimalAdmin/Index");
+                TicketCommon ticket = new TicketCommon();
+                if (ticket.Add(eve))
+                {
+                    ModelState.AddModelError("", "Thêm Thành công!");
+                    return Redirect("/Admin/Ticket/Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "sửa Thành công!");
+                    return View();
+                }
+
             }
             return View();
         }
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            DongVat model = new AnimalCommon().GetByID(id);
+            Ve model = new TicketCommon().GetVeByID(id);
             return View(model);
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(DongVat eve)
+        public ActionResult Edit(Ve eve)
         {
-            if (new AnimalCommon().Edit(eve))
+            if (new TicketCommon().EditTicket(eve))
             {
-                ModelState.AddModelError("", "Sửa Thành công!");
-                return Redirect("/Admin/EventAdmin/Index");
+                ModelState.AddModelError("", "sửa Thành công!");
+                return Redirect("/Admin/Ticket/Index");
             }
             else
             {
-                ModelState.AddModelError("", "xóa không thành công");
+                ModelState.AddModelError("", "sửa không thành công");
                 return View();
             }
-           
+
         }
         [HttpDelete]
         public ActionResult Delete(int id)
         {
-            AnimalCommon dao = new AnimalCommon();
+            TicketCommon dao = new TicketCommon();
             bool result = dao.Delete(id);
             if (result)
             {
@@ -71,7 +79,7 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "xóa không thành công");
             }
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("Index", "Ticket");
 
         }
 	}

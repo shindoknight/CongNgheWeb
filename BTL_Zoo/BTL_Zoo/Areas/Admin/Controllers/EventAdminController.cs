@@ -11,10 +11,11 @@ namespace BTL_Zoo.Areas.Admin.Controllers
     {
         //
         // GET: /Admin/Event/
-        public ActionResult Index(int page=1,int pagesize=10)
+        public ActionResult Index(string tkstring,int page=1,int pagesize=10)
         {
             var dao = new EventCommon();
-            var model = dao.ListEvent(page, pagesize);
+            var model = dao.ListEvent(tkstring,page, pagesize);
+            ViewBag.tk = tkstring;
             return View(model);
         }
         [HttpGet]
@@ -23,6 +24,7 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(SuKien eve)
         {
             if(ModelState.IsValid)
@@ -49,6 +51,7 @@ namespace BTL_Zoo.Areas.Admin.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(SuKien eve)
         {
             if(new EventCommon().Edit(eve))

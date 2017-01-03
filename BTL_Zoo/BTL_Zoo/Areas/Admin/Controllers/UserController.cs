@@ -13,10 +13,11 @@ namespace BTL_Zoo.Areas.Admin.Controllers
         Entities.Zoo model = new Entities.Zoo();
         //
         // GET: /Admin/User/
-        public ActionResult Index(int page=1, int pagesize=10)
+        public ActionResult Index(string tkstring,int page=1, int pagesize=10)
         {
             var dao = new UserCommon();
-            var model = dao.ListUser(page, pagesize);
+            var model = dao.ListUser(tkstring,page, pagesize);
+            ViewBag.tk = tkstring;
             return View(model);
         }
         public ActionResult Create()

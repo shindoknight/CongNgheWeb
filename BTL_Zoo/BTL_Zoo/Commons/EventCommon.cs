@@ -9,9 +9,15 @@ namespace BTL_Zoo.Commons
     public class EventCommon
     {
         Zoo db = null;
-        public IEnumerable<SuKien> ListEvent(int page, int pagesize)
+        public IEnumerable<SuKien> ListEvent(string tk,int page, int pagesize)
         {
-            return db.SuKiens.OrderByDescending(x => x.Thoigian).ToPagedList(page, pagesize);
+            if (!string.IsNullOrEmpty(tk))
+            {
+                var model = db.SuKiens.OrderByDescending(x => x.Thoigian).Where(x => x.DaXoa == 0);
+
+                return model.Where(x => x.TieuDe.Contains(tk) || x.TomTat.Contains(tk)).ToPagedList(page, pagesize);
+            }
+            return db.SuKiens.OrderByDescending(x => x.Thoigian).Where(x => x.DaXoa == 0).ToPagedList(page, pagesize);
         }
         public EventCommon()
         {
@@ -21,6 +27,7 @@ namespace BTL_Zoo.Commons
         {
             try
             {
+                eve.DaXoa = 1;
                 db.SuKiens.Add(eve);
                 db.SaveChanges();
                 return true;
@@ -59,7 +66,7 @@ namespace BTL_Zoo.Commons
             {
                 SuKien _event = new SuKien();
                 _event = db.SuKiens.Find(id);
-                db.SuKiens.Remove(_event);
+                _event.DaXoa = 1;
                 db.SaveChanges();
                 return true;
 

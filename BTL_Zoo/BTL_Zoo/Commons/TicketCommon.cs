@@ -4,28 +4,41 @@ using System.Linq;
 using System.Web;
 using BTL_Zoo.Entities;
 using PagedList;
+using System.Data.SqlClient;
 namespace BTL_Zoo.Commons
 {
     public class TicketCommon
     {
         Zoo db = null;
-        public IEnumerable<Ve> ListTicket(int page, int pagesize)
+        public IEnumerable<Ve> ListTicket(string tk,int page, int pagesize)
         {
-            return db.Ves.OrderBy(x => x.TenVe).ToPagedList(page, pagesize);
+            if (!string.IsNullOrEmpty(tk))
+            {
+                var model = db.Ves.OrderByDescending(x => x.TenVe).Where(x => x.DaXoa == 0);
+
+                return model.Where(x => x.TenVe.Contains(tk)).ToPagedList(page, pagesize);
+            }
+            return db.Ves.OrderBy(x => x.TenVe).Where(x=>  x.DaXoa == 0).ToPagedList(page, pagesize);
         }
-        public IEnumerable<DatVe> ListBuyTicket(int page, int pagesize, int k)
+        public IEnumerable<DatVe> ListBuyTicket(string tk,int page, int pagesize, int k)
         {
             var model=db.DatVes.OrderByDescending(x => x.NgayDat);
             if(k==1)
             {
-                return model.ToPagedList(page,pagesize);
+                if (!string.IsNullOrEmpty(tk))
+                {
+                    
+
+                    return model.Where(x => x.KhachHang.HoTen.Contains(tk) && x.DaXoa==0).ToPagedList(page, pagesize);
+                }
+                return model.Where(x => x.DaXoa == 0).ToPagedList(page,pagesize);
             }
             else
             {
                 if(k==2)
-                    return model.Where(x => x.DaThanhToan == 0).ToPagedList(page, pagesize);
+                    return model.Where(x => x.DaThanhToan == 0 &&  x.DaXoa == 0).ToPagedList(page, pagesize);
                 else
-                    return model.Where(x => x.DaGui == 0).ToPagedList(page, pagesize);
+                    return model.Where(x => x.DaGui == 0 && x.DaXoa == 0).ToPagedList(page, pagesize);
             }
                 
         }
@@ -38,6 +51,10 @@ namespace BTL_Zoo.Commons
         public DatVe GetDatVeByID(int id)
         {
             return db.DatVes.Find(id);
+        }
+        public Ve GetVeByID(int id)
+        {
+            return db.Ves.Find(id);
         }
         public bool DaGui(int id)
         {
@@ -74,6 +91,54 @@ namespace BTL_Zoo.Commons
                 return 0;
             }
 
+        }
+        public bool EditTicket(Ve eve)
+        {
+            try
+            {
+                Ve ticket = new Ve();
+                ticket = db.Ves.Find(eve.MaVe);
+                ticket.TenVe = eve.TenVe;
+                ticket.LoaiVe = eve.LoaiVe;
+                ticket.GiaMoiNguoiLon = eve.GiaMoiNguoiLon;
+                ticket.GiaMoiTreEm = eve.GiaCuTreEm;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                Ve ticket = new Ve();
+                ticket = db.Ves.Find(id);
+                ticket.DaXoa = 1;
+                db.SaveChanges();
+                return true;
+
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Add(Ve eve)
+        {
+            try
+            {
+                eve.DaXoa = 1;
+                db.Ves.Add(eve);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

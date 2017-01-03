@@ -9,9 +9,16 @@ namespace BTL_Zoo.Commons
     public class UserCommon
     {
         Zoo db = null;
-        public IEnumerable<Login> ListUser(int page, int pagesize)
+        public IEnumerable<Login> ListUser(string tk,int page, int pagesize)
         {
-            return db.Logins.OrderByDescending(x=>x.UserName).ToPagedList(page, pagesize);
+           
+            if(!string.IsNullOrEmpty(tk))
+            {
+                var model = db.Logins.OrderByDescending(x => x.UserName).Where(x => x.DaXoa == 0);
+
+                return model.Where(x => x.UserName.Contains(tk) || x.KhachHang.HoTen.Contains(tk)).ToPagedList(page, pagesize);
+            }
+            return db.Logins.OrderByDescending(x => x.UserName).Where(x => x.DaXoa == 0).ToPagedList(page, pagesize);
         }
         public UserCommon()
         {
@@ -21,13 +28,22 @@ namespace BTL_Zoo.Commons
         {
             if(db.Logins.SingleOrDefault(n=>n.UserName==user.UserName)==null)
             {
-                db.KhachHangs.Add(kh);
-                db.SaveChanges();
-                List<KhachHang> LsKH = db.KhachHangs.OrderByDescending(x => x.MaKH).ToList();
-                user.MaKH = LsKH[0].MaKH;
-                db.Logins.Add(user);
-                db.SaveChanges();
-                return 1;
+                try
+                {
+                    db.KhachHangs.Add(kh);
+                    db.SaveChanges();
+                    List<KhachHang> LsKH = db.KhachHangs.OrderByDescending(x => x.MaKH).ToList();
+                    user.MaKH = LsKH[0].MaKH;
+                    user.DaXoa = 0;
+                    db.Logins.Add(user);
+                    db.SaveChanges();
+                    return 1;
+                }
+                catch
+                {
+                    return 0;
+                }
+                
               
             }
             else
@@ -71,8 +87,10 @@ namespace BTL_Zoo.Commons
             {
                 Login us = db.Logins.Find(username);
                 KhachHang kh = db.KhachHangs.Find(us.MaKH);
-                db.KhachHangs.Remove(kh);
-                db.Logins.Remove(us);
+                // db.Database.SqlQuery<DatVe>("update DatVe set DaXoa=1 where MaKH=" + kh.MaKH.ToString());
+                 //db.Database.SqlQuery<CTDatVe>("update CTDatVe set DaXoa=1 where MaDatVe in (select MaDatVe from DatVe where DaXoa=1)");
+                kh.DaXoa = 1;
+                us.DaXoa=1;
                 db.SaveChanges();
                 return true;
 

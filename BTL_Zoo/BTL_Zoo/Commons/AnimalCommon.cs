@@ -9,9 +9,15 @@ namespace BTL_Zoo.Commons
     public class AnimalCommon
     {
         Zoo db = null;
-        public IEnumerable<DongVat> ListAnimal(int page, int pagesize)
+        public IEnumerable<DongVat> ListAnimal(string tk,int page, int pagesize)
         {
-            return db.DongVats.OrderBy(x => x.TenDV).ToPagedList(page, pagesize);
+            if (!string.IsNullOrEmpty(tk))
+            {
+                var model = db.DongVats.OrderByDescending(x => x.TenDV).Where(x => x.DaXoa == 0);
+
+                return model.Where(x => x.TenDV.Contains(tk) || x.TenKH.Contains(tk)).ToPagedList(page, pagesize);
+            }
+            return db.DongVats.OrderBy(x => x.TenDV).Where(x => x.DaXoa == 0).ToPagedList(page, pagesize);
         }
         public AnimalCommon()
         {
@@ -21,6 +27,7 @@ namespace BTL_Zoo.Commons
         {
             try
             {
+                eve.DaXoa = 1;
                 db.DongVats.Add(eve);
                 db.SaveChanges();
                 return true;
@@ -63,7 +70,7 @@ namespace BTL_Zoo.Commons
             {
                 DongVat _event = new DongVat();
                 _event = db.DongVats.Find(id);
-                db.DongVats.Remove(_event);
+                _event.DaXoa = 1;
                 db.SaveChanges();
                 return true;
 

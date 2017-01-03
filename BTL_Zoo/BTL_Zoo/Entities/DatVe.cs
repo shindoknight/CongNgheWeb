@@ -28,6 +28,11 @@ namespace BTL_Zoo.Entities
 
         public int? DaGui { get; set; }
 
+        [StringLength(100)]
+        public string DiaChiGui { get; set; }
+
+        public int DaXoa { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDatVe> CTDatVes { get; set; }
 

@@ -26,6 +26,18 @@ namespace BTL_Zoo.Entities
 
         public int? LoaiVe { get; set; }
 
+        [Column(TypeName = "date")]
+        public DateTime? NgayCapNhatGiaVe { get; set; }
+
+        [StringLength(100)]
+        public string AnhVe { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string ThongTinCTVe { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string TomTatVe { get; set; }
+
         public decimal? GiaMoiTreEm { get; set; }
 
         public decimal? GiaMoiNguoiLon { get; set; }
@@ -34,11 +46,11 @@ namespace BTL_Zoo.Entities
 
         public decimal? GiaCuNguoiLon { get; set; }
 
-        public int? ThuTu { get; set; }
+        public decimal? SLVe { get; set; }
 
-        public int? SLVe { get; set; }
+        public decimal? SLDaMua { get; set; }
 
-        public int? SLDaMua { get; set; }
+        public int DaXoa { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDatVe> CTDatVes { get; set; }

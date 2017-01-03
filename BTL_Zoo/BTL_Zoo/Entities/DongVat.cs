@@ -45,6 +45,8 @@ namespace BTL_Zoo.Entities
 
         public int? MaVe { get; set; }
 
+        public int DaXoa { get; set; }
+
         public virtual Ve Ve { get; set; }
     }
 }

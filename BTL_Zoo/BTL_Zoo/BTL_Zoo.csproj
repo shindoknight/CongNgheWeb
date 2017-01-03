@@ -176,6 +176,8 @@
     <Compile Include="Areas\Admin\Controllers\EventAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RespondController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Commons\AnimalCommon.cs" />
     <Compile Include="Commons\EventCommon.cs" />
@@ -1455,6 +1457,10 @@
     <Content Include="Areas\Admin\Views\AnimalAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AnimalAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BuyTicket\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Respond\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
